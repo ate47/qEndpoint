@@ -578,7 +578,7 @@ public class Sparql {
 			} else {
 				clearEndpointStore(locationHdt);
 				initializeEndpointStore(locationHdt, false);
-				sendUpdates(input, baseURI, filename);
+				sendUpdates(input, filename);
 			}
 			try {
 				for (LuceneSail sail : luceneSails) {
@@ -677,7 +677,7 @@ public class Sparql {
 		logger.info("NT file loaded in {}", timeWatch.stopAndShow());
 	}
 
-	private void sendUpdates(InputStream inputStream, String baseURI, String filename) throws IOException {
+	private void sendUpdates(InputStream inputStream, String filename) throws IOException {
 		StopWatch timeWatch = new StopWatch();
 
 		// uncompress the file if required
