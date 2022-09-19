@@ -27,5 +27,7 @@ jobs:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-maven-
+      - name: Load setting
+        run: ./ci_login.sh
       - name: Run tests
-        run: mvn test
+        run: mvn test -s settings.xml

@@ -126,7 +126,7 @@ public class EndpointStoreConnection extends SailSourceConnection {
 
 	@Override
 	public void begin() throws SailException {
-		logger.info("Begin connection transaction");
+		logger.debug("Begin connection transaction");
 
 		super.begin();
 
@@ -396,12 +396,12 @@ public class EndpointStoreConnection extends SailSourceConnection {
 		long sizeHdt = this.endpoint.getHdt().getTriples().getNumberOfElements();
 
 		long sizeDeleted = this.endpoint.getDeleteBitMap().countOnes();
-		logger.info("---------------------------");
-		logger.info("Size native A:" + sizeNativeA);
-		logger.info("Size native B:" + sizeNativeB);
-		logger.info("Size deleted:" + sizeDeleted);
-		logger.info("Size size HDT:" + sizeHdt);
-		logger.info("---------------------------");
+		logger.debug("---------------------------");
+		logger.debug("Size native A: {}", sizeNativeA);
+		logger.debug("Size native B: {}", sizeNativeB);
+		logger.debug("Size deleted: {}", sizeDeleted);
+		logger.debug("Size size HDT: {}", sizeHdt);
+		logger.debug("---------------------------");
 		return sizeHdt + sizeNativeA + sizeNativeB - sizeDeleted;
 	}
 
