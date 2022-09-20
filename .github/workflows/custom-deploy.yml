@@ -1,7 +1,9 @@
 name: Custom deploy
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - custom-deploy
 
 defaults:
   run:
