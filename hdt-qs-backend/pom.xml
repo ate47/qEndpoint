@@ -18,7 +18,6 @@
             <url>https://maven.pkg.github.com/ate47/rdf4j/</url>
             <snapshots>
                 <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
             </snapshots>
         </repository>
     </repositories>
