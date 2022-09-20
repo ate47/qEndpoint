@@ -12,12 +12,7 @@ defaults:
 jobs:
   publish:
     name: Publish to Github package
-    needs: build
     runs-on: ubuntu-latest
-    if: ${{ inputs.publish_maven }}
-    permissions:
-      contents: read
-      packages: write
     steps:
       - uses: actions/checkout@v2
       - name: Login
