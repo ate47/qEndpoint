@@ -32,6 +32,7 @@ jobs:
           cp -r hdt-qs-frontend/build/* hdt-qs-backend/src/main/resources/static/
       - name: Create login
         run: ./ci_login.sh
+        working-directory: hdt-qs-backend
       - name: Compile backend
         run: mvn install -DskipTests -s settings.xml
         working-directory: hdt-qs-backend

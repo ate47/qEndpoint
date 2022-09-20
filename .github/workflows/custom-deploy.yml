@@ -1,0 +1,28 @@
+name: Custom deploy
+
+on:
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: hdt-qs-backend
+
+jobs:
+  publish:
+    name: Publish to Github package
+    needs: build
+    runs-on: ubuntu-latest
+    if: ${{ inputs.publish_maven }}
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v2
+      - name: Login
+        run: ./ci_login.sh
+      - name: Login settings
+        uses: s4u/maven-settings-action@v2.5.0
+        with:
+          servers: '[{"id": "github", "username": "ate47", "password": "${{ secrets.GITHUB_TOKEN }}"}]'
+      - name: Deploy
+        run: mvn deploy -Pgithub -B -s settings.xml
