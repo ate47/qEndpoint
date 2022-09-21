@@ -14,8 +14,11 @@
 
     <repositories>
         <repository>
-            <id>rdf4j-ate47-mvn-repo</id>
-            <url>https://maven.pkg.github.com/ate47/rdf4j/</url>
+            <id>oss.sonatype.org-snapshot</id>
+            <url>http://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
