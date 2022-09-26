@@ -11,17 +11,7 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.7.3</version>
     </parent>
-
-    <repositories>
-        <repository>
-            <id>rdf4j-ate47-mvn-repo</id>
-            <url>https://maven.pkg.github.com/ate47/rdf4j/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
+    
     <properties>
         <java.source.version>11</java.source.version>
         <java.target.version>11</java.target.version>
@@ -30,7 +20,7 @@
         <json_simple.version>1.1.1</json_simple.version>
         <junit.version>4.13</junit.version>
         <lwjgl.version>3.3.1</lwjgl.version>
-        <rdf4j.version>4.2.1-SNAPSHOT</rdf4j.version>
+        <rdf4j.version>4.3.0-SNAPSHOT</rdf4j.version>
         <rdfhdt.version>3.0.2</rdfhdt.version>
         <spring.version>2.7.3</spring.version>
 

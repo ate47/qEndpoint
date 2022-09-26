@@ -30,11 +30,8 @@ jobs:
         run: |
           mkdir -p hdt-qs-backend/src/main/resources/static/
           cp -r hdt-qs-frontend/build/* hdt-qs-backend/src/main/resources/static/
-      - name: Create login
-        run: ./ci_login.sh
-        working-directory: hdt-qs-backend
       - name: Compile backend
-        run: mvn install -DskipTests -s settings.xml
+        run: mvn install -DskipTests
         working-directory: hdt-qs-backend
       - name: move endpoint
         run: mv hdt-qs-backend/target/qendpoint-*-exec.jar endpoint.jar

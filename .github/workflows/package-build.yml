@@ -52,9 +52,7 @@ jobs:
           mkdir -p hdt-qs-backend/src/main/resources/static/
           cp -r hdt-qs-frontend/build/* hdt-qs-backend/src/main/resources/static/
       - name: Compile backend
-        run: |
-          ./ci_login.sh
-          mvn install -s settings.xml
+        run: mvn install
         working-directory: hdt-qs-backend
       - name: move endpoint
         run: mv hdt-qs-backend/target/qendpoint-*-exec.jar endpoint.jar
@@ -84,9 +82,7 @@ jobs:
         with:
           servers: '[{"id": "sonatype-nexus-snapshots", "username": "${{ secrets.SONATYPE_NEXUS_USERNAME }}", "password": "${{ secrets.SONATYPE_NEXUS_PASSWORD }}"},{"id": "sonatype-nexus-staging", "username": "${{ secrets.SONATYPE_NEXUS_USERNAME }}", "password": "${{ secrets.SONATYPE_NEXUS_PASSWORD }}"}]'
       - name: Publish to the Maven Central Repository
-        run: |
-          ./ci_login.sh
-          mvn --batch-mode deploy -P release -s settings.xml
+        run: mvn --batch-mode deploy -P release
         working-directory: hdt-qs-backend
   osx:
     name: Build OSX version
