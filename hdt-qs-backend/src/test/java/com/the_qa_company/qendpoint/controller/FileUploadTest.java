@@ -70,13 +70,13 @@ public class FileUploadTest {
 	@Autowired
 	Sparql sparql;
 
-	@Value("${locationHdt}")
+	@Value("${hdtStoreName}")
 	String locationHdt;
 
 	@Value("${hdtIndexName}")
 	String hdtIndexName;
 
-	@Value("${locationNative}")
+	@Value("${nativeStoreName}")
 	String locationNative;
 
 	private final String fileName;

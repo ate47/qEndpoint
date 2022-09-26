@@ -523,6 +523,7 @@ public class Sparql {
 		// wait previous loading
 		waitLoading(0);
 		try {
+			filename = Path.of(filename).getFileName().toString();
 			String rdfInput = locationHdt + filename;
 			String hdtOutput = EndpointFiles.getHDTIndex(locationHdt, hdtIndexName);
 			String baseURI = "file://" + rdfInput;
